@@ -76,4 +76,7 @@ npm i emoji-mart @emoji-mart/data @emoji-mart/react
 //now install livekit
 npm install livekit-server-sdk @livekit/components-react @livekit/components-styles --save
 
+//railway.app for deployment
+
+
 
