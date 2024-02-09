@@ -1,0 +1,79 @@
+Build with:
+
+shadcn/ui library
+next 13
+
+Chose this library because is based on tailwind and radix components and because it is a copy and paste library
+You can use shadcn/ui to modify any ui project
+
+replace inter with Open_Sans on layout.tsx
+
+install simple react snippets
+sfc //simple function
+
+example organizational folders (auth)
+organizational folders have no effect on the url
+
+create login and register folders
+add layout.tsx to (auth) folder
+
+const AuthLayout = ({ children}: { children: React.ReactNode }) => {
+  return ( 
+    <div className="bg-red-500 h-full">
+      {children}
+    </div> );
+}
+ 
+export default AuthLayout;
+
+layouts allow you to pass in the same styling to multiple routes/pages
+
+rm -rf .next // to do .next folder for bugs
+
+create (main) org folder and (routes) then move page.tsx inside of it
+
+
+npm install @clerk/nextjs
+Wrap ClerkProvider around layout.tsx // https://clerk.com/docs/quickstarts/nextjs?_gl=1*2po5eh*_gcl_au*MTUzMTcwMDc0MC4xNzA1OTcwNzM0*_ga*NTc3OTcwNzYuMTcwNTk3MDczNA..*_ga_1WMF5X234K*MTcwNTk3MDczMy4xLjEuMTcwNTk3MDgyOS4wLjAuMA..
+
+Follow along with the documentation or click continue with docs
+
+//add these to .env
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in 
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up 
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+
+//add providers folder to components
+add theme-provider.tsx
+npm i next-themes
+and add mode-toggle.tsx to ui
+npx shadcn-ui@latest add dropdown-menu
+
+add <ModeTottle to (main) (routes) page.tsx
+
+npm i uuid
+npm i -D @types/uuid
+
+npm i axios   //for api requests
+
+always make a modal-provider after making a modal //components>providers>modal-provider.tsx then add them to root layout app>layout.tsx>RootLayout
+
+npm i socket.io //for server
+npm i socket.io-client  //for frontend
+
+make pages folder to intialize io connection
+add socket-provider as well
+
+double check that paths in socket-provider are correct
+use network tab on developer tools to check io is working properly
+
+//For emoji popover
+npx shadcn-ui@latest add popover
+npm i emoji-mart @emoji-mart/data @emoji-mart/react
+
+
+//now install livekit
+npm install livekit-server-sdk @livekit/components-react @livekit/components-styles --save
+
+
