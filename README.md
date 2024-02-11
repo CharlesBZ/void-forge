@@ -1,37 +1,74 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Void Forge: Next.js 13, Socket.io, Tailwindcss, Prisma, MySQL 
 
-## Getting Started
+Features:
 
-First, run the development server:
+- Instant messaging in real-time powered by Socket.io
+- Share attachments seamlessly using UploadThing
+- Edit and delete messages in real-time across all users
+- Establish Text, Audio, and Video call Channels
+- Facilitate one-on-one conversations among members
+- Enable one-on-one video calls between members
+- Manage members effectively with options for kicking and role changes (Guest/Moderator)
+- Generate unique invite links and implement a fully functional invite system
+- Load messages dynamically in batches of 10 with infinite scrolling (@tanstack/query)
+- Build and customize servers to suit specific needs
+- Design an appealing UI using TailwindCSS and ShadcnUI
+- Ensure full responsiveness and mobile-friendly UI
+- Provide Light/Dark mode for user preference
+- Implement Websocket fallback: Polling with alerts
+- Utilize ORM through Prisma
+- Employ a MySQL database via Planetscale
+- Implement secure authentication using Clerk
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+### Prerequisites
+
+**Node version 20.5.1
+
+```shell
+git clone https://github.com/CharlesBZ/void-forge.git
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Install packages
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```shell
+npm i
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Setup .env file
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+```js
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+DATABASE_URL=
 
-## Deploy on Vercel
+UPLOADTHING_SECRET=
+UPLOADTHING_APP_ID=
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+LIVEKIT_API_KEY=
+LIVEKIT_API_SECRET=
+NEXT_PUBLIC_LIVEKIT_URL=
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Prisma Setup
 
+Add MySQL Database (PlanetScale was used)
+
+```shell
+npx prisma generate
+npx prisma db push
+npx prisma studio
+
+```
+
+### Run App
+
+```shell
+npm run dev
+```
