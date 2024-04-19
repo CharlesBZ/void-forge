@@ -2,6 +2,7 @@
 
 import axios from "axios";
 import * as z from "zod";
+//zod is for validating user input
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { useEffect } from "react";
